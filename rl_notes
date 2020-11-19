@@ -1,0 +1,31 @@
+# RL Notes
+
+Four main RL algorithms
+- Certainty equivalence
+- Temporal difference (TD) learning, on-policy method
+- Q-Learning (off-policy method), learns policy and value function simultaneously 
+- SARSA (on-policy method)
+
+Two main types of tasks in RL
+ 1. Prediction tasks
+ 2. Control tasks
+
+On-policy vs off-policy
+
+On-policy can get stuck in local maxima
+
+Markov property - everything you need to know to make a decision is included in the state, not allowed to consult the past
+
+RL will solve all of your problems but,
+- Need a lot of experience to train from
+- Taking random actions can be dangerous
+- Can take a long time to learn
+- Not all problems fit into a MDP framework
+
+## Steps for RL
+ 1. Get real world experience
+ 2. Compute optimal value function V*(s)
+ 3. Compute optimal policy TT*(s) - trivial once we have optimal value function
+
+
+
