@@ -113,8 +113,9 @@ print("Training finished.\n")
 # Evaluate agents performance after Q-Learning
 total_epochs, total_penalties = 0, 0
 episodes = 100
+frames = []
 
-for _ in range(episodes):
+for i in range(episodes):
   state = env.reset()
   epochs, penalties, reward = 0, 0, 0
   done = False
@@ -126,11 +127,25 @@ for _ in range(episodes):
     if reward == -10:
       penalties += 1
 
+    if i == 1:
+      frames.append({
+        'frame': env.render(mode='ansi'),
+        'state': state,
+        'action': action,
+        'reward': reward,
+      })
+
     epochs += 1
 
   total_penalties += penalties
   total_epochs += epochs
 
+value = input("Printing frames (will clear screen) (Y/n)")
+
+if value == 'Y':
+  print_frames(frames)
+
+print()
 print(f"Results after {episodes} episodes")
 print(f"Average timesteps per episode: {total_epochs / episodes}")
 print(f"Average penalties per episode: {total_penalties / episodes}")
