@@ -20,7 +20,6 @@ EXPLORATION_DECAY = 0.999 # increased exploration decay, at episode approx. 50 g
 
 
 class DQNSolver:
-
     def __init__(self, observation_space, action_space):
         self.exploration_rate = EXPLORATION_MAX
 
